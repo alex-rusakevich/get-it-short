@@ -33,7 +33,7 @@ class LinksController extends Controller
         ));
 
         $lnk_code = base_convert($new_link->id, 10, 36);
-        // $lnk_code = sprintf("%04s", $lnk_code);
+        $lnk_code = sprintf("%04s", $lnk_code); // Make link at least 4 chars wide
 
         return back()->with('success', $lnk_code);
     }

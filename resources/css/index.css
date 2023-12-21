@@ -1,0 +1,25 @@
+div#content-panel {
+    form {
+        & > * {
+            margin-bottom: 12px;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            margin-bottom: 6px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+        }
+
+        span.invalid-feedback {
+            display: block;
+        }
+
+        margin: 0;
+    }
+}

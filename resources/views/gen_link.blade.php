@@ -1,6 +1,10 @@
 @extends('app')
  
 @section('title', 'Новая ссылка')
+
+@section('resources')
+    @vite(['resources/css/index.css'])
+@endsection
  
 @section('content')
     <form method="post" action="{{ route('create_link_form') }}">
@@ -11,13 +15,13 @@
             <input type="text" class="form-control @error('user_link') is-invalid @enderror" 
                 id="user_link" name="user_link"
                 placeholder="Введите ссылку" required>
-                
-            @error('user_link')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
         </div>
+
+        @error('user_link')
+            <span class="invalid-feedback" role="alert">
+                {{ $message }}
+            </span>
+        @enderror
 
         <button type="submit" class="btn btn-primary">Создать!</button>
     </form>
@@ -28,5 +32,5 @@
                 {{ preg_replace("(^https?://)", "", url('/'.Session::get('success'))) }}
             </a>
         </div>
-    @endif  
+    @endif
 @endsection
