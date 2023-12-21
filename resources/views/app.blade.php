@@ -10,7 +10,7 @@
     <body>
         <div id="content">
             <div id="content-panel" class="panel panel-default">
-                <span class="brand">Get It Short!</span>
+                <a href="/" class="brand">Get It Short!</a>
             
                 @yield('content')
             </div>
