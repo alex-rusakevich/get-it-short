@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Models\Links;
+
+use Carbon\Carbon;
 
 class LinksController extends Controller
 {
@@ -11,20 +15,26 @@ class LinksController extends Controller
     }
 
     public function link_redirect(string $link): View {
-        $real_number = base_convert($link, 36, 10);
+        $real_id = base_convert($link, 36, 10);
+        $lnk_obj = Links::findOrfail($real_id);
 
-        return view("link_redirect", ["real_number" => $real_number]);
+        return view("link_redirect", array("real_link" => ($lnk_obj -> link)));
     }
 
-    public function create_link(): View {
-        return view("show_link");
-    }
+    public function create_link(Request $request) {
+        $this->validate($request, [
+            'user_link' => 'required|filled|url',
+        ]);
+        
+        $new_link = Links::create(array(
+            'link' => $request->get('user_link'),
+            'is_premium' => false,
+            'expires_at' => Carbon::now() -> addDays(7)
+        ));
 
-    public function show_link(string $link): View {
-        $url = url("/".$link);
-        $parsed = parse_url($url);
-        $url = $parsed['host'] . $parsed['path'];
+        $lnk_code = base_convert($new_link->id, 10, 36);
+        // $lnk_code = sprintf("%04s", $lnk_code);
 
-        return view("show_link", ["new_url" => $url]);
+        return back()->with('success', $lnk_code);
     }
 }

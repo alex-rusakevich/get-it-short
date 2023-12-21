@@ -3,5 +3,5 @@
 @section('title', 'Ваша ссылка')
  
 @section('content')
-    <p>Переадресация ссылки с ID {{ $real_number }}</p>
+    <p>Переадресация ссылки <a href="{{ $real_link }}">{{ $real_link }}</a></p>
 @endsection

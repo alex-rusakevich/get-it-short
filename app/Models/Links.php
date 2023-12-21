@@ -10,4 +10,6 @@ class Links extends Model
     use HasFactory;
     protected $table = "links";
     public $timestamps = false;
+
+    protected $fillable = ['link', 'expires_at', 'is_premium'];
 }
