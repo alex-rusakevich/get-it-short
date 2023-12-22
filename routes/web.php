@@ -14,8 +14,11 @@ use App\Http\Controllers\LinksController;
 |
 */
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::get("/", [LinksController::class, 'index']);
-Route::get("/show/{id}", [LinksController::class, 'show_link']);
 Route::post("/create", [LinksController::class, 'create_link']) -> name('create_link_form');
 
 Route::get("/{id}", [LinksController::class, 'link_redirect']);
