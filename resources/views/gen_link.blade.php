@@ -4,6 +4,7 @@
 
 @section('resources')
     @vite(['resources/css/index.css'])
+    @vite(['resources/js/index.js'])
 @endsection
  
 @section('content')
@@ -27,10 +28,14 @@
     </form>
 
     @if(Session::has('success'))
-        <div class="alert alert-success text-center">
-            Ваша ссылка: <a href="{{ url('/'.Session::get('success')) }}">
+        <div class="alert alert-success text-center" id="success-alert-panel">
+            <div id="link-part">Ваша ссылка: <a href="{{ url('/'.Session::get('success')) }}" id="generated-link">
                 {{ preg_replace("(^https?://)", "", url('/'.Session::get('success'))) }}
-            </a>
+            </a></div>
+
+            <div>
+                <span class="bi bi-copy" id="copy-address"></span>
+            </div>
         </div>
     @endif
 @endsection

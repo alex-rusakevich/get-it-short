@@ -23,3 +23,16 @@ div#content-panel {
         margin: 0;
     }
 }
+
+div#success-alert-panel {
+    display: flex;
+    gap: 6px;
+
+    span#copy-address {
+        cursor: pointer;
+    }
+
+    div#link-part {
+        width: 100%;
+    }
+}
