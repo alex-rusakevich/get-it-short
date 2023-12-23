@@ -7,3 +7,9 @@
 </p>
 
 Сайт, созданный для сокращения ссылок. Первый шаг далекой дороги
+
+## Скриншоты
+
+<img src="./_repo/screenshot-1.png" width="280">
+<img src="./_repo/screenshot-2.png" width="280">
+<img src="./_repo/screenshot-3.png" width="280">
