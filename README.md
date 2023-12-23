@@ -1,4 +1,4 @@
-# get-it-short
+# laravel-get-it-short
 
 <p>
     <a href="https://www.php.net/"><img src="https://img.shields.io/static/v1?label=php&message=v8.3&color=4f5b93" alt="php - v8.3"></a>
