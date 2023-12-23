@@ -10,6 +10,7 @@ div#content-panel {
 
         label {
             margin-bottom: 6px;
+            user-select: none;
         }
 
         button[type="submit"] {
@@ -34,5 +35,9 @@ div#success-alert-panel {
 
     div#link-part {
         width: 100%;
+
+        span {
+            user-select: none;
+        }
     }
 }

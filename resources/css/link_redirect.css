@@ -1,3 +1,7 @@
-span#sec-to-redirect {
-    font-weight: bold;
+p#redirect-msg {
+    span#sec-to-redirect {
+        font-weight: bold;
+    }
+
+    user-select: none;
 }

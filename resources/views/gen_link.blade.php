@@ -29,7 +29,9 @@
 
     @if(Session::has('success'))
         <div class="alert alert-success text-center" id="success-alert-panel">
-            <div id="link-part">Ваша ссылка: <a href="{{ url('/'.Session::get('success')) }}" id="generated-link">
+            <div id="link-part">
+                <span>Ваша ссылка: </span>
+                <a href="{{ url('/'.Session::get('success')) }}" id="generated-link">
                 {{ preg_replace("(^https?://)", "", url('/'.Session::get('success'))) }}
             </a></div>
 

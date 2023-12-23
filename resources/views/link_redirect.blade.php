@@ -12,6 +12,6 @@
 @endsection
  
 @section('content')
-    <p>Через <span id="sec-to-redirect">10</span> секунд вы будете переадресованы на следующую ссылку:</p>
+    <p id="redirect-msg">Через <span id="sec-to-redirect">10</span> секунд вы будете переадресованы на следующую ссылку:</p>
     <p><a href="{{ $real_link }}">{{ $real_link }}</a></p>
 @endsection
